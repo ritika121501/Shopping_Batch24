@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Shopping_Batch24.Migrations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Shopping_Batch24.Models
@@ -16,5 +17,6 @@ namespace Shopping_Batch24.Models
         [ForeignKey("Category")]
         public int CategoryId {  get; set; }
         public Category Category { get; set; }  
+        public bool IsActive { get; set; }
     }
 }

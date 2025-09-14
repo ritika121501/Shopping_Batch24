@@ -1,0 +1,64 @@
+﻿@model Shopping_Batch24.Models.Product
+
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<h2 class="mb-4">Create Product</h2>
+
+<form asp-action="Create" method="post" class="row g-3">
+    <div class="form-floating py-2 col-12">
+        <input asp-for="Title" class="form-control border-0 shadow" placeholder="Enter Title" />
+        <label asp-for="Title" class="ms-2"></label>
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating py-2 col-12">
+        <textarea asp-for="Description" class="form-control border-0 shadow" placeholder="Enter Description" style="height: 100px;"></textarea>
+        <label asp-for="Description" class="ms-2"></label>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating py-2 col-12 col-md-6">
+        <input asp-for="Author" class="form-control border-0 shadow" placeholder="Enter Author" />
+        <label asp-for="Author" class="ms-2"></label>
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating py-2 col-12 col-md-6">
+        <input asp-for="ISBN" class="form-control border-0 shadow" placeholder="Enter ISBN" />
+        <label asp-for="ISBN" class="ms-2"></label>
+        <span asp-validation-for="ISBN" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating py-2 col-12 col-md-6">
+        <input asp-for="Price" class="form-control border-0 shadow" placeholder="Enter Price" />
+        <label asp-for="Price" class="ms-2"></label>
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating py-2 col-12 col-md-6">
+        <select asp-for="CategoryId" class="form-select border-0 shadow"
+                asp-items="ViewBag.CategoryList">
+            <option value="">-- Select Category --</option>
+        </select>
+        <label asp-for="CategoryId" class="ms-2"></label>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <div class="form-check py-2 col-12">
+        <input asp-for="IsActive" class="form-check-input" type="checkbox" />
+        <label asp-for="IsActive" class="form-check-label ms-2"></label>
+    </div>
+
+    <div class="col-12 mt-3">
+        <button type="submit" class="btn btn-primary px-4">Save</button>
+        <a asp-action="Index" class="btn btn-secondary px-4 ms-2">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

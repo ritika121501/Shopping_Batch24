@@ -8,7 +8,7 @@ namespace Shopping_Batch24
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Category> Category {  get; set; }
-        public DbSet<Product> product {  get; set; }
+        public DbSet<Product> Product {  get; set; }
 
     }
 }
